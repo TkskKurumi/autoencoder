@@ -9,7 +9,7 @@ import numpy as np
 import models,training,losses
 
 E,D,AE=models.ae()
-opti=keras.optimizers.Nadam()
+opti=keras.optimizers.Adadelta()
 AE.compile(opti,loss=losses.diff_var)
 while(True):
 	training.train_ae(AE)
